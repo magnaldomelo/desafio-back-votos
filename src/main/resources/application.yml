@@ -1,0 +1,31 @@
+server:
+  servlet:
+    context-path: '/desafio-back-votos'
+  port: 8080
+
+spring:
+  application:
+    name: 'desafio-back-votos'
+
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: "*"
+
+application:
+  usersservice:
+    url: https://user-info.herokuapp.com
+
+pool:
+  usersservice:
+    maxConn: 100
+    maxRoutes: 200
+    connTimeout: 60000
+    readTimeout: 60000
+
+feign:
+  httpclient:
+    max-connections: 100
+    connection-timeout: 2000
